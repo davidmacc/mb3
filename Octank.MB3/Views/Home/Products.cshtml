@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Products";
+}
+<h2>Products</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">SKU</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var x in ViewBag.Products.Rows)
+    {
+        <tr>
+            <td>@x["ProductID"]</td>
+            <td>@x["ProductName"]</td>
+            <td>@x["Price"]</td>
+            <td>@x["ProductDescription"]</td>
+            <td>
+                <a>@Html.ActionLink("Edit", "EditProduct", "Home")</a> |
+                <a>@Html.ActionLink("Delete", "DeleteProduct", "Home")</a>
+            </td>
+        </tr>
+    }
+</table>
+<h3>Add new Product</h3>
+@{
+    using (@Html.BeginForm("AddProduct", "Home", FormMethod.Post))
+    {
+        <div class="form-group">
+            <label>SKU</label>
+            <input name="ProductId" class="form-control" type="text" />
+        </div>
+        <div class="form-group">
+            <label>Name</label>
+            <input name="ProductName" class="form-control" type="text" />
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input name="Price" class="form-control" type="text" />
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input name="ProductDescription" class="form-control" type="text" />
+        </div>
+        <input type="submit" class="btn btn-primary" value="Add" />
+    }
+}
+<br />

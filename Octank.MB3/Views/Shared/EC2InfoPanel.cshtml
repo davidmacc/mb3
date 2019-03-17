@@ -1,0 +1,10 @@
+﻿<div style="padding:15px 20px 20px 20px; background-color:#EEE;  border-radius: 10px;">
+    <img style="float:right;padding:10px;" src="https://www.gravatar.com/avatar/@Amazon.Util.EC2InstanceMetadata.InstanceId.Substring(2)?s=80&d=identicon&r=PG" />
+    <h2>Instance <span style="color:green">@Amazon.Util.EC2InstanceMetadata.InstanceId</span></h2>
+    region-az: <b><span style="font-size:1.2em">@Amazon.Util.EC2InstanceMetadata.AvailabilityZone</span></b><br />
+    instance-type: @Amazon.Util.EC2InstanceMetadata.InstanceType<br />
+    ami-id: @Amazon.Util.EC2InstanceMetadata.AmiId<br />
+    hostname: @Amazon.Util.EC2InstanceMetadata.Hostname<br />
+    private-ipv4: @Amazon.Util.EC2InstanceMetadata.PrivateIpAddress<br />
+    page generated: @DateTime.Now<br />
+</div>
